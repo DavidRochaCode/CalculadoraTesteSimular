@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="Estilo.css">
+</head>
+
+<body>
+
+
+
+  <header>
+    <h1>Calculadora</h1>
+
+  </header>
+
+
+  <section>
+    Número 1: <input type="number" id="number1"><br><br>
+    Número 2: <input type="number" id="number2"><br><br>
+    <input type="radio" name="calculo" id="soma">
+    <label for="soma">Somar</label><br>
+    <input type="radio" name="calculo" id="subtraçao">
+    <label for="subtraçao">Subtrair</label><br>
+    <input type="radio" name="calculo" id="multiplicaçao">
+    <label for="multiplicaçao">Multiplicar</label><br>
+    <input type="radio" name="calculo" id="divisao">
+    <label for="divisao">Dividir</label><br><br>
+    <input type="button" value="Calcular" onclick="ir()">
+    <p id="mensagem"></p>
+
+  </section>
+
+
+
+  <footer>
+    <P>by David Rocha</P>
+
+  </footer>
+
+
+
+  <script>
+    function ir() {
+      var n1 = Number(document.getElementById('number1').value)
+      var n2 = Number(document.getElementById('number2').value)
+      var cal = document.getElementsByName('calculo')
+      var mens = document.getElementById('mensagem')
+      mens.innerHTML = ''
+
+      function calculadora(n1, n2) {
+        if (cal[0].checked) {
+          var Somar = n1 + n2
+          return Somar
+
+        } else if (cal[1].checked) {
+          var Subtrair = n1 - n2
+          return Subtrair
+
+        } else if (cal[2].checked) {
+          var Multiplicar = n1 * n2
+          return Multiplicar
+
+        } else if (cal[3].checked) {
+          var Dividir = n1 / n2
+          return Dividir
+
+        }else{
+          alert('Adicione uma operação')
+        }
+      }
+
+      mens.innerHTML += calculadora(n1, n2)
+
+    }
+  </script>
+
+
+
+
+</body>
+
+</html>
